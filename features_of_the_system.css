@@ -1,0 +1,72 @@
+/* Services list */
+.service-box {
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px rgba(2, 6, 63, 0.199);
+	border-radius: 20px;
+	padding: 20px;
+	position: relative;
+	max-width: 90%;
+	max-height: 80%;
+	margin: 0 auto;
+}
+
+.service-box:hover {
+	background: #0405416b;
+}
+
+.styled-list {
+    list-style: none; /* Remove default numbering */
+    padding: 0;
+    margin: 0;
+    position: relative;
+    max-width: 100%; /* Control the list width */
+    width: 100%;
+	height: 80%;
+}
+
+/* 1. Creating the vertical line (timeline connector) */
+.styled-list::before {
+    content: '';
+    position: absolute;
+    top: 10px; /* Start below the first item */
+    bottom: 10px; /* End above the last item */
+    left: 20px; /* Position of the line */
+    width: 2px;
+    background: rgba(255, 255, 255, 0.15); /* Light gray line */
+    z-index: 1;
+}
+
+.list-item {
+    margin-bottom: 35px; /* Space between features */
+    position: relative;
+    padding-left: 60px; /* Space for the number/dot */
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    z-index: 2; /* Ensure items stack above the line */
+}
+
+/* 2. Customizing the numbers (connected dots) */
+.list-item::before {
+    content: counter(list-item); /* Use the list item counter */
+    counter-increment: list-item;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #4ac3ff 0%, #8ce3ff 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0a0e27; /* Dark text color for the number */
+}
+
+.feature-text {
+    font-size: 18px;
+    color: #ffffff; /* White text for the feature description */
+    line-height: 1.5;
+}
