@@ -218,6 +218,139 @@ nav.scrolled {
 
 
 
+/* Image Cards */
+.images-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 20px;
+	
+}
+
+.image-card {
+	/* background-color: #0a0e27;
+	border: 0px solid rgba(255, 255, 255, 0.1); */
+	border-radius: 22px;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s ease;
+  	max-width: 90%; /* Limits individual card width */
+	max-height: 80%;
+	margin: 0 auto;
+}
+
+.image-card:hover {
+	transform: translateY(-5px);
+	background: rgba(255, 255, 255, 0.05);
+  	box-shadow: 0 10px 30px rgba(0,255,204,0.2);
+}
+
+.image-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 10px;
+  
+}
+
+/* --- Team Section Styles --- */
+
+
+.section-title {
+    color: #ffffff; /* White title text */
+    margin-bottom: 80px; /* Space below the title */
+    font-size: 36px;
+    font-weight: 700;
+}
+
+/* 1. Create the Grid for 6 Cards */
+.team-grid {
+    display: grid;
+    /* On large screens, create 6 columns of equal width */
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 30px; /* Space between cards */
+    max-width: 1400px; /* Limit the overall width of the grid */
+    margin: 0 auto; /* Center the grid container */
+    padding-top: 50px; /* Space between title and first row of cards */
+	padding-bottom: 50px;
+}
+
+/* 2. Style Individual Team Member Cards */
+.team-member-card {
+    background: rgba(255, 255, 255, 0.03); /* Dark transparent background */
+    border-radius: 15px; /* Rounded corners */
+    padding-bottom: 80px;
+    text-align: center;
+    position: relative; /* Needed for positioning the image */
+    padding-top: 90px; /* Space for the image to overlap */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member-card a {
+    text-decoration: none;  /* remove underline */
+    color: inherit;          /* keep text color same */
+    display: block;          /* make link cover whole card */
+}
+
+.team-member-card:hover .profile-image {
+	filter: grayscale(0%);
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 10px 20px rgba(0, 255, 204, 0.2); /* Subtle glow on hover */
+}
+
+
+
+/* 3. Profile Image Styling (Circular and Overlapping) */
+.profile-image-wrapper {
+    position: absolute; /* Position relative to the card */
+    top: -50px; /* Adjust to make it overlap the top edge */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 150px; /* Size of the circular image wrapper */
+    height: 150px;
+    border-radius: 50%; /* Make it circular */
+    background: #0a0e27; /* Background color behind the image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensures image stays within the circle */
+	transition: filter 0.5s ease;
+}
+
+.profile-image {
+    width: 150px; /* Slightly smaller than wrapper to show border */
+    height: 150px;
+    border-radius: 50%; /* Keep the image itself circular */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+	filter: grayscale(100%);
+	transition: filter 0.5s ease;
+}
+
+/* 4. Text Styling */
+.member-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px; /* Space after image (within card padding) */
+    color: #ffffff;
+}
+
+.member-role {
+    font-size: 14px;
+    color: #a0a0a0;
+    margin-top: 5px;
+}
+
 /* Footer content */
 /* --- Footer Styles --- */
 
