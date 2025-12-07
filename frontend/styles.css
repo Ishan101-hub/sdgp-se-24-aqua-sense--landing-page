@@ -169,6 +169,126 @@ nav.scrolled {
 
 /* Main content styles - Add your styles here */
 
+/* Services list */
+.service-box {
+	background: rgba(255, 255, 255, 0);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	padding: 20px;
+	position: relative;
+	z-index: 10;
+	max-width: 90%;
+	max-height: 80%;
+	margin: 0 auto;
+}
+
+.section-title {
+    position: relative; /* Essential for z-index to work */
+    z-index: 5;        /* Higher than the background's z-index (1) */
+    color: #ffffff;    /* Ensure the text color is bright white */
+}
+
+/* Target the specific Services section container */
+#services {
+    position: relative; /* Essential for positioning the ::after pseudo-element */
+    overflow: hidden; /* Ensures the background image stays within the section boundaries */
+}
+
+/* Create a pseudo-element to hold the background image and the gradient overlay */
+#services::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Place it *behind* the service-box content (which is z-index 2) */
+    
+    /* 1. Stacked Background: Gradient Overlay on top of the Image */
+    background-image: 
+        /* Gradient Overlay: Fades from solid dark on the left to transparent on the right */
+        linear-gradient(to right, 
+            #0a0e27 0%, /* Start solid dark color on the left (matches your background) */
+            #0a0e27 35%, /* Solid dark color up to about 35% of the section width */
+            rgba(10, 14, 39, 0.5) 55%, /* Fade out to 50% opacity at 55% */
+            rgba(10, 14, 39, 0) 100% /* Fully transparent on the right */
+        ),
+        /* Image: Set as the second layer */
+        url('background.jpeg'); 
+
+    /* 2. Image Positioning and Sizing */
+    background-size: cover; /* Cover the entire area of the pseudo-element */
+    background-repeat: no-repeat;
+    background-position: right center; /* Position the image starting from the right edge */
+    opacity: 0.5; /* Reduce the overall intensity of the image */
+}
+
+.service-box:hover {
+	background: rgba(255, 255, 255, 0.05);
+}
+
+
+
+.styled-list {
+    list-style: none; /* Remove default numbering */
+    padding: 0;
+    margin: 0;
+    position: relative;
+    max-width: 100%; /* Control the list width */
+    width: 100%;
+	height: 80%;
+}
+
+/* 1. Creating the vertical line (timeline connector) */
+.styled-list::before {
+    content: '';
+    position: absolute;
+    top: 10px; /* Start below the first item */
+    bottom: 10px; /* End above the last item */
+    left: 20px; /* Position of the line */
+    width: 2px;
+    background: rgba(255, 255, 255, 0.15); /* Light gray line */
+    z-index: 1;
+}
+
+.list-item {
+    margin-bottom: 35px; /* Space between features */
+    position: relative;
+    padding-left: 60px; /* Space for the number/dot */
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    z-index: 2; /* Ensure items stack above the line */
+}
+
+/* 2. Customizing the numbers (connected dots) */
+.list-item::before {
+    content: counter(list-item); /* Use the list item counter */
+    counter-increment: list-item;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #00ffcc 0%, #00ccff 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0a0e27; /* Dark text color for the number */
+    /* box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);  */
+}
+
+.feature-text {
+    font-size: 18px;
+    color: #ffffff; /* White text for the feature description */
+    line-height: 1.5;
+}
+
+
+
 /* Device card */
 .device-grid {
 	display: grid;
