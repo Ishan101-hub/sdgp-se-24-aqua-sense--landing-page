@@ -300,6 +300,58 @@
             </div>
         </section>
 
+        <!-- Feedback Section -->
+        <section class="dashboard-section" id="feedback">
+            <div class="dashboard-container">
+                <h2 class="section-title">Tell Us Your Feedback</h2>
+
+                <div class="container feedback-form">
+                    <!-- <form action="" method="post" id="feedbackForm">  -->
+                        
+                    <form id="feedbackForm"> 
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name" id="name">
+                                </div>
+                                
+                                <textarea name="txtMsg" class="form-control" placeholder="Your Message Or Suggestion" style="width: 600px;height: 150px;margin-bottom: 8px;" id="message"></textarea>
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="TxtEmail" class="form-control" placeholder="Enter Your Email Address" id="email">
+                                </div>
+                                <div class="form-group rating-group">
+                                    <label class="rating-label">Rate Us</label>
+                                    <div class="star-rating">
+                                        <input type="radio" name="rating" id="star5" value="5">
+                                        <label for="star5" class="star">&#9733</label>
+
+                                        <input type="radio" name="rating" id="star4" value="4">
+                                        <label for="star4" class="star">&#9733</label>
+
+                                        <input type="radio" name="rating" id="star3" value="3">
+                                        <label for="star3" class="star">&#9733</label>
+
+                                        <input type="radio" name="rating" id="star2" value="2">
+                                        <label for="star2" class="star">&#9733</label>
+
+                                        <input type="radio" name="rating" id="star1" value="1">
+                                        <label for="star1" class="star">&#9733</label>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="submit-wrapper">
+                                    <input type="submit" name="btnsubmit" class="btnfeedback" value="Send Feedback" style="outline: none;">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="formMessage" style="text-align: center; margin-top: 20px; font-size: 18px;"></div>
+                    </form>
+                </div>            
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer class="main-footer">
             <div class="footer-content">
