@@ -138,6 +138,75 @@ nav.scrolled {
     color: white;
 }
 
+/*Create account*/
+.create-container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a0e27;
+    padding: 40px;
+}
+
+.form-box{
+    width: 400px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 18px;
+    padding: 35px;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+.form-box h2{
+    background:linear-gradient(135deg,#00ffcc,#00ccff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip:text;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.input-field{
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border:1px solid rgba(255,255,255,0.2);
+    background:rgba(255,255,255,0.07);
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-field:focus {
+    border-color:#00ffcc;
+    box-shadow:0 0 10px rgba(0,255,204,.3);
+}
+
+.form-msg{
+	margin-top:12px;
+	font-size:15px;
+}
+
+.login-link{
+    margin-top: 15px;
+    font-size: 14px;
+    color:#a0a0a0;   
+}
+
+.login-link a{
+    color: #00ffcc;
+    text-decoration: none;
+}
+
+.login-link a:hover{
+    text-decoration: underline;
+}
+
+@media(max-width:450px){
+	.form-box{width:95%;padding:25px;}
+}
+
 /* Login button */
 
 .login-btn{
@@ -163,6 +232,401 @@ nav.scrolled {
 		display:block;
 		width:80%;
 		margin:10px auto; 
+	}
+}
+
+/*Login*/
+.login-container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:#0a0e27;
+    padding: 40px;
+}
+
+.login-box{
+    width: 380px;
+    background:rgba(255,255,255,0.05);
+    border-radius: 18px;
+    padding: 35px;
+    border:1px solid rgba(255,255,255,0.1);
+    text-align: center;   
+}
+
+.login-box h2{
+    background:linear-gradient(135deg,#00ffcc,#00ccff);
+	-webkit-text-fill-color:transparent;
+	-webkit-background-clip:text;
+    font-size: 28;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.login-box .subtitle{
+    font-size: 14px;
+    color:#a0a0a0;
+    margin-bottom: 25px;
+}
+
+.signup-link{
+    margin-top: 15px;
+    font-size: 14px;
+    color:#a0a0a0;
+}
+
+.signup-link a {
+    color:#00ffcc;
+    text-decoration: none;
+}
+
+.signup-link a:hover{
+    text-decoration: underline;
+}
+
+@media(max-width:450px){
+    .login-box{width: 93%; padding: 25px;}
+}
+
+/* Hero Section */
+.hero {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+	/* background: linear-gradient(360deg, #01041a 0%, #1a1f3f 100%); */
+}
+
+.hero-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.4;
+	background-image:
+		linear-gradient(45deg, transparent 30%, rgba(0, 255, 204, 0.1) 50%, transparent 70%),
+		linear-gradient(-45deg, transparent 30%, rgba(255, 0, 128, 0.1) 50%, transparent 70%);
+	animation: bgShift 20s ease-in-out infinite;
+}
+
+@keyframes bgShift {
+
+	0%,
+	100% {
+		transform: translate(0, 0);
+	}
+
+	50% {
+		transform: translate(-20px, -20px);
+	}
+}
+
+.geometric-shapes {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.shape {
+	position: absolute;
+	border: 2px solid rgba(0, 255, 204, 0.3);
+}
+
+.shape1 {
+	width: 300px;
+	height: 300px;
+	top: 10%;
+	left: -150px;
+	transform: rotate(45deg);
+	animation: float 15s ease-in-out infinite;
+}
+
+.shape2 {
+	width: 200px;
+	height: 200px;
+	top: 60%;
+	right: -100px;
+	border-color: rgba(255, 0, 128, 0.3);
+	animation: float 20s ease-in-out infinite reverse;
+}
+
+.shape3 {
+	width: 150px;
+	height: 150px;
+	bottom: 20%;
+	left: 10%;
+	border-color: rgba(0, 204, 255, 0.3);
+	transform: rotate(30deg);
+	animation: float 18s ease-in-out infinite;
+}
+
+.shape4 {
+	width: 250px;
+	height: 250px;
+	top: 15%;
+	right: 5%;
+	border-color: rgba(255, 0, 128, 0.25);
+	transform: rotate(45deg);
+	animation: float 16s ease-in-out infinite;
+}
+
+.shape5 {
+	width: 180px;
+	height: 180px;
+	top: 55%;
+	right: 12%;
+	border-color: rgba(0, 255, 204, 0.25);
+	transform: rotate(-30deg);
+	animation: float 22s ease-in-out infinite reverse;
+}
+
+.shape6 {
+	width: 120px;
+	height: 120px;
+	bottom: 15%;
+	right: 8%;
+	border-color: rgba(0, 204, 255, 0.25);
+	transform: rotate(20deg);
+	animation: float 19s ease-in-out infinite;
+}
+
+.hero-content {
+	position: relative;
+	z-index: 10;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 50px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px;
+	align-items: center;
+}
+
+.hero-text {
+	animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.hero-text h1 {
+	font-size: 64px;
+	font-weight: 700;
+	line-height: 1.1;
+	margin-bottom: 30px;
+	background: linear-gradient(135deg, #ffffff 0%, #00ffcc 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	padding-bottom: 8px;
+}
+
+.hero-text p {
+	font-size: 18px;
+	line-height: 1.6;
+	color: #a0a0a0;
+	margin-bottom: 40px;
+	max-width: 500px;
+}
+
+.cta-button {
+	display: inline-block;
+	padding: 15px 40px;
+	color: white;
+	text-decoration: none;
+	border-radius: 30px;
+	font-size: 16px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	border: none;
+	cursor: pointer;
+}
+
+#cta-button-1 {
+	background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+}
+#cta-button-2 {
+	border: 1px solid #134175b9;
+	background-color: #0a0e27;
+}
+
+
+.cta-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.hero-visual {
+	position: relative;
+	animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.city-container {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	perspective: 1000px;
+}
+
+.building {
+	position: absolute;
+	background: linear-gradient(180deg, #1a1f3a 0%, #0a0e27 100%);
+	border: 1px solid rgba(0, 255, 204, 0.2);
+	box-shadow:
+		0 0 20px rgba(0, 255, 204, 0.1),
+		inset 0 0 20px rgba(0, 255, 204, 0.05);
+	overflow: hidden;
+}
+
+/* Building fill effect */
+.building-fill {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	animation: pulse 3s ease-in-out infinite;
+}
+
+.building1 {
+	width: 60px;
+	height: 250px;
+	bottom: 0;
+	left: 20%;
+}
+
+.building1 .building-fill {
+	height: 45%;
+	background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 204, 0.6) 100%);
+}
+
+.building2 {
+	width: 80px;
+	height: 320px;
+	bottom: 0;
+	left: 35%;
+}
+
+.building2 .building-fill {
+	height: 60%;
+	background: linear-gradient(180deg, transparent 0%, rgba(255, 0, 128, 0.6) 100%);
+	animation-delay: 0.5s;
+}
+
+.building3 {
+	width: 100px;
+	height: 280px;
+	bottom: 0;
+	right: 25%;
+}
+
+.building3 .building-fill {
+	height: 35%;
+	background: linear-gradient(180deg, transparent 0%, rgba(0, 204, 255, 0.6) 100%);
+	animation-delay: 1s;
+}
+
+.building4 {
+	width: 70px;
+	height: 200px;
+	bottom: 0;
+	right: 10%;
+}
+
+.building4 .building-fill {
+	height: 50%;
+	background: linear-gradient(180deg, transparent 0%, rgba(255, 107, 107, 0.6) 100%);
+	animation-delay: 1.5s;
+}
+
+@keyframes pulse {
+
+	0%,
+	100% {
+		opacity: 0.6;
+		transform: translateY(0);
+	}
+
+	50% {
+		opacity: 1;
+		transform: translateY(-5px);
+	}
+}
+
+/* Building windows */
+.building-windows {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	background: repeating-linear-gradient(0deg,
+			transparent,
+			transparent 8px,
+			rgba(255, 255, 255, 0.05) 8px,
+			rgba(255, 255, 255, 0.05) 10px);
+	opacity: 0.8;
+}
+
+.neon-line {
+	position: absolute;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #00ffcc, transparent);
+	animation: scan 3s linear infinite;
+}
+
+.neon-line1 {
+	width: 100px;
+	top: 30%;
+	left: 10%;
+}
+
+.neon-line2 {
+	width: 150px;
+	top: 50%;
+	right: 15%;
+	animation-delay: 1s;
+}
+
+@keyframes scan {
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateX(200%);
+		opacity: 0;
 	}
 }
 
