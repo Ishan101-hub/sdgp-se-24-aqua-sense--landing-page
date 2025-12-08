@@ -1056,6 +1056,125 @@ nav.scrolled {
     margin-top: 5px;
 }
 
+/* --- Feedback Section Styles --- */
+/* Feedback Section  */
+.feedback-form {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;          
+}
+
+/* Form Groups */
+.feedback-form .form-group {
+    margin-bottom: 25px;
+}
+
+/* Input + Textarea fields */
+.feedback-form .form-control {
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;   
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+/* Textarea adjustments */
+.feedback-form textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+	max-width: 100%;
+}
+
+/* RATING SECTION */
+.rating-group {
+    margin-bottom: 25px;
+}
+
+.rating-label {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.star-rating {
+    direction: rtl;
+    display: inline-flex;
+    gap: 8px;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label.star {
+    font-size: 35px;
+    color: #444; 
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.star-rating label.star:hover,
+.star-rating label.star:hover ~ label.star {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.star-rating input:checked ~ label.star {
+    color: #ffcc00;
+}
+
+
+/* Focus style  */
+.feedback-form .form-control:focus {
+    outline: none;
+    border-color: rgba(0, 255, 204, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+}
+
+/* Row spacing fix */
+.feedback-form form .row {
+    margin-bottom: 0;
+}
+
+/* Button styling */
+
+
+.btnfeedback {
+    width: auto;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 15px;
+    margin-top: 25px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+#submit-wrapper {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.btnfeedback:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+
+
 /* Footer content */
 /* --- Footer Styles --- */
 

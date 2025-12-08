@@ -108,3 +108,56 @@ document.querySelectorAll('.chart-options').forEach(optionGroup => {
       });
    });
 });
+
+// Feedback Form Submission Handler
+document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+   e.preventDefault(); // Prevent page reload
+
+   // Get values
+   const name = document.getElementById('name').value.trim();
+   const email = document.getElementById('email').value.trim();
+   const message = document.getElementById('message').value.trim();
+
+   const formMessage = document.getElementById('formMessage');
+   const submitBtn = document.querySelector('.btnfeedback');
+
+   // Email validation function
+   function isValidEmail(email) {
+       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+       return emailRegex.test(email);
+   }
+
+   // Validation - empty fields
+   if (name === "" || email === "" || message === "") {
+       formMessage.style.color = "#ff6b6b";
+       formMessage.textContent = "Please fill out all fields.";
+       return;
+   }
+
+   // Validation - invalid email
+   if (!isValidEmail(email)) {
+       formMessage.style.color = "#ff6b6b";
+       formMessage.textContent = "Please enter a valid email address.";
+       return;
+   }
+
+   // Success state
+   formMessage.style.color = "#00ffcc";
+   formMessage.textContent = "Thank you! Your feedback has been submitted.";
+
+   const originalText = submitBtn.value;
+   const originalBg = submitBtn.style.background;
+
+   submitBtn.value = "Feedback Sent ✓";
+   submitBtn.style.background = "linear-gradient(135deg, #4ade80, #22c55e)";
+
+   // Clear form
+   this.reset();
+
+   // Restore button + clear message
+   setTimeout(() => {
+       submitBtn.value = originalText;
+       submitBtn.style.background = originalBg;
+       formMessage.textContent = "";
+   }, 3000);
+});
