@@ -1393,3 +1393,30 @@ nav.scrolled {
 	background: rgba(0, 255, 204, 0.1);
 	color: #00ffcc;
 }
+
+/*Form validation UI*/
+
+/*validation error text*/
+.error-msg{
+	color: #ff4d4d;
+	font-size: 14px;
+	margin-top: -6px;
+	display: block;
+}
+
+/*highlight input red when it has an error*/
+.input-field.error{
+	border: 2px solid #ff4d4d !important;
+}
+
+/*Success msg style*/
+.form-msg{
+	margin-top: 12px;
+	font-size: 15px;
+}
+
+/*Fade animation for error pop up*/
+@keyframes fadeIn{
+	from{opacity: 0; transform: translateY(-4px);}
+	to{opacity: 1; transform: translateY(0);}
+}
