@@ -161,3 +161,8 @@ document.getElementById('feedbackForm').addEventListener('submit', function (e) 
        formMessage.textContent = "";
    }, 3000);
 });
+
+/*hamburger*/
+if(typeof hamburger !== "undefined" && navLinksMobile){
+   
+}
