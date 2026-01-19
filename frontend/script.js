@@ -63,6 +63,31 @@ function updateActiveNav() {
    });
 }
 
+// Page-based active navigation (for separate pages like create-account, login)
+function setActiveNavByPage() {
+   const currentPage = window.location.pathname.split("/").pop();
+
+   const allNavLinks = document.querySelectorAll(
+      '.nav-links a, .nav-links-mobile a'
+   );
+
+   allNavLinks.forEach(link => {
+      const linkHref = link.getAttribute('href');
+
+      // Remove existing active
+      link.classList.remove('active');
+
+      // Match exact page
+      if (linkHref === currentPage) {
+         link.classList.add('active');
+      }
+   });
+}
+
+// Run once on page load
+setActiveNavByPage();
+
+
 window.addEventListener('scroll', updateActiveNav);
 
 // Smooth scrolling

@@ -101,6 +101,8 @@ nav.scrolled {
 	border-radius: 2px;
 }
 
+
+
 /*Navigation bar - Create account , login */
 .create-btn-nav {
     background: linear-gradient(135deg,#00ffcc,#00ccff);
@@ -858,11 +860,11 @@ nav.scrolled {
   width: 100%;
 }
 #icon {
-	height: 53%;
-	width: 80%;
+	height: 50%;
+	width: 100;
 }
 #icon-2{
-	height: 53%;
+	height: 50%;
 	width: 100%;
 }
 
@@ -1642,4 +1644,29 @@ html, body {
 .footer-bottom{
 	text-align: center;
 	padding: 25px;
+}
+
+
+
+@media (max-width: 992px) {
+
+    .nav-links-mobile a.create-btn-nav,
+    .nav-links-mobile a.login-btn-nav {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 15px 20px !important;
+        color: #ffffff !important;
+        font-weight: 400 !important;
+        text-align: center;
+    }
+
+    .nav-links-mobile a.create-btn-nav:hover,
+    .nav-links-mobile a.login-btn-nav:hover {
+        background: rgba(0, 255, 204, 0.08);
+        color: #00ffcc !important;
+    }
 }
