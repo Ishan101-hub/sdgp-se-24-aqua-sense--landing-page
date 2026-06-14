@@ -137,7 +137,7 @@ document.querySelectorAll('.chart-options').forEach(optionGroup => {
 // ── Feedback Form — sends to backend API ─────────────────────────────────────
 // 🔧 UPDATE THIS URL once your backend is deployed
 //    e.g. "https://aquasense-backend.onrender.com/api/feedback"
-const BACKEND_URL = "https://aquasense-landing-page.onrender.com";
+const BACKEND_URL = "https://aquasense-landing-page.onrender.com/api/feedback";
 
 document.getElementById('feedbackForm').addEventListener('submit', async function (e) {
    e.preventDefault();
