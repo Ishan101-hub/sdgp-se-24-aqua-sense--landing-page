@@ -34,7 +34,7 @@ app.post("/api/feedback", async (req, res) => {
       },
       body: JSON.stringify({
         from: "AquaSense Feedback <onboarding@resend.dev>",
-        to: [process.env.EMAIL_TO],
+        to: process.env.EMAIL_TO,
         reply_to: email,
         subject: `New Feedback from ${name} — AquaSense`,
         html: `
