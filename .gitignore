@@ -37,3 +37,16 @@ Thumbs.db
 # Temporary files
 *.tmp
 .cache/
+
+# Dependencies
+node_modules/
+
+# Environment secrets — NEVER commit this
+backend/.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/

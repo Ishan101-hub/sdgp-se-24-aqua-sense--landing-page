@@ -134,60 +134,70 @@ document.querySelectorAll('.chart-options').forEach(optionGroup => {
    });
 });
 
-// Feedback Form Submission Handler
-document.getElementById('feedbackForm').addEventListener('submit', function (e) {
-   e.preventDefault(); // Prevent page reload
+// ── Feedback Form — sends to backend API ─────────────────────────────────────
+// 🔧 UPDATE THIS URL once your backend is deployed
+//    e.g. "https://aquasense-backend.onrender.com/api/feedback"
+const BACKEND_URL = "https://your-backend-url.com/api/feedback";
 
-   // Get values
-   const name = document.getElementById('name').value.trim();
-   const email = document.getElementById('email').value.trim();
+document.getElementById('feedbackForm').addEventListener('submit', async function (e) {
+   e.preventDefault();
+
+   const name    = document.getElementById('name').value.trim();
+   const email   = document.getElementById('email').value.trim();
    const message = document.getElementById('message').value.trim();
+   const ratingEl = document.querySelector('input[name="rating"]:checked');
+   const rating  = ratingEl ? ratingEl.value : null;
 
    const formMessage = document.getElementById('formMessage');
-   const submitBtn = document.querySelector('.btnfeedback');
+   const submitBtn   = document.querySelector('.btnfeedback');
 
-   // Email validation function
-   function isValidEmail(email) {
-       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-       return emailRegex.test(email);
+   // Client-side validation
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   if (!name || !email || !message) {
+      formMessage.style.color = "#ff6b6b";
+      formMessage.textContent = "Please fill out all fields.";
+      return;
+   }
+   if (!emailRegex.test(email)) {
+      formMessage.style.color = "#ff6b6b";
+      formMessage.textContent = "Please enter a valid email address.";
+      return;
    }
 
-   // Validation - empty fields
-   if (name === "" || email === "" || message === "") {
-       formMessage.style.color = "#ff6b6b";
-       formMessage.textContent = "Please fill out all fields.";
-       return;
-   }
-
-   // Validation - invalid email
-   if (!isValidEmail(email)) {
-       formMessage.style.color = "#ff6b6b";
-       formMessage.textContent = "Please enter a valid email address.";
-       return;
-   }
-
-   // Success state
-   formMessage.style.color = "#00ffcc";
-   formMessage.textContent = "Thank you! Your feedback has been submitted.";
-
+   // Loading state
    const originalText = submitBtn.value;
-   const originalBg = submitBtn.style.background;
+   submitBtn.value    = "Sending…";
+   submitBtn.disabled = true;
+   formMessage.textContent = "";
 
-   submitBtn.value = "Feedback Sent ✓";
-   submitBtn.style.background = "linear-gradient(135deg, #4ade80, #22c55e)";
+   try {
+      const res  = await fetch(BACKEND_URL, {
+         method:  "POST",
+         headers: { "Content-Type": "application/json" },
+         body:    JSON.stringify({ name, email, message, rating }),
+      });
+      const data = await res.json();
 
-   // Clear form
-   this.reset();
+      if (res.ok && data.success) {
+         formMessage.style.color = "#00ffcc";
+         formMessage.textContent = "Thank you! Your feedback has been sent.";
+         submitBtn.value    = "Feedback Sent ✓";
+         submitBtn.style.background = "linear-gradient(135deg, #4ade80, #22c55e)";
+         this.reset();
 
-   // Restore button + clear message
-   setTimeout(() => {
-       submitBtn.value = originalText;
-       submitBtn.style.background = originalBg;
-       formMessage.textContent = "";
-   }, 3000);
+         setTimeout(() => {
+            submitBtn.value    = originalText;
+            submitBtn.style.background = "";
+            formMessage.textContent    = "";
+         }, 4000);
+      } else {
+         throw new Error(data.error || "Something went wrong.");
+      }
+   } catch (err) {
+      formMessage.style.color = "#ff6b6b";
+      formMessage.textContent = err.message || "Failed to send. Please try again.";
+      submitBtn.value    = originalText;
+   } finally {
+      submitBtn.disabled = false;
+   }
 });
-
-/*hamburger*/
-if(typeof hamburger !== "undefined" && navLinksMobile){
-   
-}
