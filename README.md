@@ -78,38 +78,40 @@ A single-page marketing and showcase website for the AquaSense IoT product. The 
 ```
 aquasense-landing-page/
 │
-├── index.html          # Single-page frontend — all sections
-├── styles.css          # All custom CSS — animations, layout, components
-├── script.js           # All frontend JS — nav, scroll, form handler
+├── backend/
+│   ├── server.js           # Express backend — POST /api/feedback → Resend email
+│   ├── package.json        # npm metadata and dependencies
+│   ├── package-lock.json   # Locked dependency tree
+│   ├── .env                # ⚠ Real credentials — excluded from version control
+│   ├── .env.sample         # ✅ Credentials template — copy this to .env
+│   └── node_modules/       # Installed dependencies
 │
-├── server.js           # Express backend — POST /api/feedback → Resend email
-├── package.json        # npm metadata and dependencies
-├── package-lock.json   # Locked dependency tree
-│
-├── .env                # ⚠ Real credentials — excluded from version control
-├── .env.sample         # ✅ Credentials template — copy this to .env
-│
-├── images/             # All images — team photos, dashboard screenshots, icons, logos
-│   ├── white.png               # Nav logo (white version)
-│   ├── final logo 1.png        # Footer logo
-│   ├── colored logo.png        # App icon
-│   ├── icon 1.png              # Browser tab favicon
-│   ├── Login page.png          # Dashboard screenshot
-│   ├── Dashboard.png           # Dashboard screenshot
-│   ├── Leakage.png             # Dashboard screenshot
-│   ├── Report.png              # Dashboard screenshot
-│   ├── sensor.png              # Water flow sensor image
-│   ├── valve.png               # Solenoid valve image
-│   ├── ESP32.png               # ESP32 microcontroller image
-│   ├── t-removebg-preview.png  # HiveMQ logo
-│   ├── Sustainable_Development_Goal_6.png
-│   ├── Sustainable_Development_Goal_9.png
-│   ├── Sustainable_Development_Goal_11.png
-│   ├── Sustainable_Development_Goal_12.png
-│   └── (team member photos)
+├── frontend/
+│   ├── index.html          # Single-page frontend — all sections
+│   ├── styles.css          # All custom CSS — animations, layout, components
+│   ├── script.js           # All frontend JS — nav, scroll, form handler
+│   ├── images/             # All images — team photos, dashboard screenshots, icons, logos
+│   │   ├── white.png
+│   │   ├── final logo 1.png
+│   │   ├── colored logo.png
+│   │   ├── icon 1.png
+│   │   ├── Login page.png
+│   │   ├── Dashboard.png
+│   │   ├── Leakage.png
+│   │   ├── Report.png
+│   │   ├── sensor.png
+│   │   ├── valve.png
+│   │   ├── ESP32.png
+│   │   ├── t-removebg-preview.png
+│   │   ├── Sustainable_Development_Goal_6.png
+│   │   ├── Sustainable_Development_Goal_9.png
+│   │   ├── Sustainable_Development_Goal_11.png
+│   │   ├── Sustainable_Development_Goal_12.png
+│   │   └── (team member photos)
 │
 ├── .gitignore
 └── README.md
+
 ```
 
 ---
